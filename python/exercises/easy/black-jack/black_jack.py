@@ -52,6 +52,8 @@ def value_of_ace(card_one, card_two):
     Returns:
         int: 1 o 11.
     """
+    if card_one == 'A' or card_two == 'A':
+        return 1
     current_sum = value_of_card(card_one) + value_of_card(card_two)
     if current_sum + 11 <= 21:
         return 11

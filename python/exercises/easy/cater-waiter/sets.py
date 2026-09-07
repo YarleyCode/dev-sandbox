@@ -100,7 +100,13 @@ def separate_appetizers(dishes, appetizers):
         list: Platos que no están en la lista de appetizers.
     """
     appetizers_set = set(appetizers)
-    return [dish for dish in dishes if dish not in appetizers_set]
+    seen = set()
+    result = []
+    for dish in dishes:
+        if dish not in appetizers_set and dish not in seen:
+            result.append(dish)
+            seen.add(dish)
+    return result
 
 
 def singleton_ingredients(dishes, intersection):

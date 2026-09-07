@@ -55,4 +55,5 @@ def adjective_to_verb(sentence, index):
         str: El adjetivo transformado en verbo (con 'en' al final).
     """
     words = sentence.split()
-    return words[index] + 'en'
+    word = words[index].rstrip('.,!?;:')
+    return word + 'en'
